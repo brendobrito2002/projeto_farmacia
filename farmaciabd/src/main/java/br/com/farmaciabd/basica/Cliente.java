@@ -34,7 +34,11 @@ public class Cliente {
 		return cpf;
 	}
 	public void setCpf(String cpf) {
-		this.cpf = cpf;
+		if(cpf.length() == 11) {
+			this.cpf = cpf;
+	}else {
+		System.out.println("Cpf Inválido");
+		}
 	}
 	public String getNome() {
 		return nome;
@@ -46,7 +50,11 @@ public class Cliente {
 		return telefone;
 	}
 	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+		if(telefone.length() == 11) {
+			this.telefone = telefone;
+		} else{
+			System.out.println("Número inválido");
+		}
 	}
 	
 }

@@ -39,7 +39,11 @@ public class Vendedor {
 		return cpf;
 	}
 	public void setCpf(String cpf) {
-		this.cpf = cpf;
+		if(cpf.length() == 11) {
+			this.cpf = cpf;
+	}else {
+		System.out.println("Cpf Inválido");
+		}
 	}
 	public String getNome() {
 		return nome;
@@ -51,21 +55,23 @@ public class Vendedor {
 		return telefone;
 	}
 	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+		if(telefone.length() == 11) {
+			this.telefone = telefone;
+		} else{
+			System.out.println("Número inválido");
+		}
 	}
 	public double getSalario() {
 		return salario;
 	}
 	public void setSalario(double salario) {
-		this.salario = salario;
+		this.salario = 1400.00;
 	}
 	public double getPercentualComicao() {
 		return percentualComicao;
 	}
 	public void setPercentualComicao(double percentualComicao) {
-		this.percentualComicao = percentualComicao;
+		this.percentualComicao = 0.02;
 	}
 
-	
-	
 }

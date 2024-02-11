@@ -16,16 +16,16 @@ public class Promocao {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Medicamento medicamento;
 	private double desconto;
-	private String data_incio;
-	private String data_fim;
+	private String dataIncio;
+	private String dataFim;
 	
-	public Promocao(long id, Medicamento medicamento, double desconto, String data_incio, String data_fim) {
+	public Promocao(long id, Medicamento medicamento, double desconto, String dataIncio, String dataFim) {
 		super();
 		this.id = id;
 		this.medicamento = medicamento;
 		this.desconto = desconto;
-		this.data_incio = data_incio;
-		this.data_fim = data_fim;
+		this.dataIncio = dataIncio;
+		this.dataFim = dataFim;
 	}
 	
 	public long getId() {
@@ -46,17 +46,17 @@ public class Promocao {
 	public void setDesconto(double desconto) {
 		this.desconto = desconto;
 	}
-	public String getData_incio() {
-		return data_incio;
+	public String getDataIncio() {
+		return dataIncio;
 	}
-	public void setData_incio(String data_incio) {
-		this.data_incio = data_incio;
+	public void setDataIncio(String dataIncio) {
+		this.dataIncio = dataIncio;
 	}
-	public String getData_fim() {
-		return data_fim;
+	public String getDataFim() {
+		return dataFim;
 	}
-	public void setData_fim(String data_fim) {
-		this.data_fim = data_fim;
+	public void setDataFim(String dataFim) {
+		this.dataFim = dataFim;
 	}
 	
 }

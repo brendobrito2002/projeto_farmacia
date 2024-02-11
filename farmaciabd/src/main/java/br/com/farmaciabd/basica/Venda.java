@@ -1,10 +1,12 @@
 package br.com.farmaciabd.basica;
 
+import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -13,18 +15,18 @@ public class Venda {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@OneToOne(cascade = CascadeType.ALL)
-	private Medicamento medicamento;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Medicamento> medicamento;
 	@OneToOne(cascade = CascadeType.ALL)
 	private Vendedor vendedor;
 	@OneToOne(cascade = CascadeType.ALL)
 	private Cliente cliente;
 	private double precoFinal;
 	
-	public Venda(long id, Medicamento medicamento, Vendedor vendedor, Cliente cliente, double precoFinal) {
+	public Venda(long id, List<Medicamento> medicamento, Vendedor vendedor, Cliente cliente, double precoFinal) {
 		super();
 		this.id = id;
-		this.medicamento = medicamento;
+		this.medicamento =  medicamento;
 		this.vendedor = vendedor;
 		this.cliente = cliente;
 		this.precoFinal = precoFinal;
@@ -36,11 +38,11 @@ public class Venda {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public Medicamento getMedicamento() {
+	public List<Medicamento> getMedicamento() {
 		return medicamento;
 	}
-	public void setMedicamento(Medicamento medicamento) {
-		this.medicamento = medicamento;
+	public void setMedicamento(List<Medicamento> medicamento) {
+		this.medicamento =  medicamento;
 	}
 	public Vendedor getVendedor() {
 		return vendedor;
